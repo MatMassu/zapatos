@@ -10,7 +10,7 @@ export default function ProductScroller() {
         {[...categorias /*,...categorias*/].map((p, i) => (
           <div
             key={i}
-            className="flex w-screen h-full bg-white shadow-2xs m-0.5 items-center justify-center hover:scale-101 hover:shadow-md transform transition-all active:bg-gray-100 select-none"
+            className="flex w-screen h-full active:scale-99 bg-white shadow-2xs m-0.5 items-center justify-center hover:scale-101 hover:shadow-md transform transition-all active:bg-gray-100 select-none"
           >
             {p}
           </div>

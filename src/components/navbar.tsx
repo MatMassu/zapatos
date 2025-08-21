@@ -1,9 +1,10 @@
+import Link from "next/link";
 import Button from "./button";
 import SearchBar from "./searchbar";
 
 export default function NavBar() {
   return (
-    <nav className="fixed grid grid-cols-3 h-[50px] w-full items-center bg-radial from-[#925232] to-[#864d30] px-4 z-50">
+    <nav className="fixed grid grid-cols-3 h-[50px] w-full items-center bg-gradient-to-b from-[#884929cc] to-[#b16b47cc] px-4 z-50 backdrop-blur-sm ">
       {/* Left section: menu + search */}
       <div className="flex items-center gap-3">
         <Button src={"menu.svg"} />
@@ -12,17 +13,17 @@ export default function NavBar() {
 
       {/* Center section: brand */}
       <div className="text-center font-serif text-lg text-white cursor-pointer">
-        <a href="/">Zapatos Massucco</a>
+        <Link href="/">Zapatos Massucco</Link>
       </div>
 
       {/* Right section: account + cart */}
       <div className="flex justify-end items-center gap-3">
-        <a href="/account">
+        <Link href="/account">
           <Button src={"account.svg"} />
-        </a>
-        <a href="/cart">
+        </Link>
+        <Link href="/cart">
           <Button src={"cart.svg"} />
-        </a>
+        </Link>
       </div>
     </nav>
   );
