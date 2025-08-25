@@ -6,17 +6,17 @@ export default function MainProducts() {
 
   const products = Array.from({ length: 13 }).map((_, i) => ({
     name: `Producto ${i + 1}`,
-    slug: `producto-${i + 1}`,
+    Id: `${i + 1}`,
     price: 100000,
-    image: `shoes_ph.png`,
+    image: `/shoes_ph.png`,
   }));
 
   return (
     <div className="flex-1 grid grid-cols-3 min-h-screen w-screen top-[20vw] bg-white">
       {products.map((product) => (
         <Link
-          key={product.slug}
-          href={`/products/${product.slug}`}
+          key={product.Id}
+          href={`/productos/${product.Id}`}
           className={cardClass}
         >
           <h1 className="text-black font-serif text-3xl pt-10">
