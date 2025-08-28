@@ -13,7 +13,7 @@ export default function NavBar() {
 
       {/* Center section: brand */}
       <div className="text-center font-serif text-lg text-white cursor-pointer">
-        <Link href="/">Zapatos Massucco</Link>
+        <Link href="/">Zapatos</Link>
       </div>
 
       {/* Right section: account + cart */}
