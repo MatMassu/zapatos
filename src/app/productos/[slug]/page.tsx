@@ -9,20 +9,22 @@ import { useState } from "react";
 }) { */
 
 export default function ProductPage() {
-  const [amount, setAmount] = useState(1);
   /*  const productId = (await params).Id; */
 
-  function increaseAmount() {
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+  const [isShippingOpen, setIsShippingOpen] = useState(false);
+
+  const [amount, setAmount] = useState(1);
+  const increaseAmount = () => {
     if (amount < 10) {
       setAmount(amount + 1);
     }
-  }
-
-  function decreaseAmount() {
+  };
+  const decreaseAmount = () => {
     if (amount > 1) {
       setAmount(amount - 1);
     }
-  }
+  };
 
   /* TODO: con productId recuperar datos de DB para mostrar info de compra */
   return (
@@ -100,9 +102,37 @@ export default function ProductPage() {
             </div>
           </div>
 
-          <div className="text-gray-500 mt-20">
-            <p>Medios de pago</p>
-            <p>Medios de envío</p>
+          <div className="flex flex-col w-full items-start text-gray-500 mt-10">
+            <div
+              className="underline cursor-pointer select-none active:text-gray-400"
+              onClick={() => setIsPaymentOpen(!isPaymentOpen)}
+              aria-expanded={isPaymentOpen}
+            >
+              Medios de pago
+            </div>
+
+            {isPaymentOpen && (
+              <div className="border transition-all transform rounded-md p-2 text-left w-full">
+                <p>Tarjeta de crédito</p>
+                <p>Transferencia o deposito</p>
+                <p>MercadoPago</p>
+              </div>
+            )}
+
+            <div
+              className="underline cursor-pointer select-none mt-5 active:text-gray-400"
+              onClick={() => setIsShippingOpen(!isShippingOpen)}
+              aria-expanded={isShippingOpen}
+            >
+              Medios de envío
+            </div>
+            {isShippingOpen && (
+              <div className="border transition-all transform rounded-md p-2 text-left w-full">
+                <p>Andreani</p>
+                <p>OCA</p>
+                <p>Correo Argentino</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

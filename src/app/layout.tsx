@@ -31,7 +31,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar />
-        {/*<Drawer />*/}
         <main className="flex flex-col bg-amber-950">{children}</main>
         <Footer />
       </body>
