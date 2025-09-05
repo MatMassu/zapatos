@@ -7,7 +7,7 @@ export default async function ProductPage({
 }: {
   params: { slug: string };
 }) {
-  const singleProductData = await fetchProduct((await params).slug);
+  const singleProductData = await fetchProduct(params.slug);
 
   return (
     <div className="bg-white mt-[50px] ">
