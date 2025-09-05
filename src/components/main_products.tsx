@@ -1,5 +1,6 @@
 import { fetchAllProducts } from "@/app/lib/data";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function MainProducts() {
   const cardClass =
@@ -18,7 +19,12 @@ export default async function MainProducts() {
           <h1 className="text-black font-serif text-3xl pt-10">
             {product.name}
           </h1>
-          <img src={"/shoes_ph.png"} alt={product.name} className="scale-75" />
+          <Image
+            src="/shoes_ph.png"
+            alt={product.name}
+            height="500"
+            width="500"
+          />
           <div className="text-black font-serif flex flex-col items-center gap-5 pb-10">
             <p className="text-center pl-20 pr-20 text-gray-500">
               {product.description}
