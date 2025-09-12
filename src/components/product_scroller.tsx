@@ -1,10 +1,10 @@
 export default function ProductScroller() {
-  const categorias = Array.from({ length: 5 }).map(
+  const categorias = Array.from({ length: 4 }).map(
     (_, i) => `Categoria ${i + 1}`
   );
 
   return (
-    <div className="overflow-hidden relative w-full h-70 bg-gray-100 pb-1 text-white">
+    <div className="overflow-hidden relative w-full h-40 bg-gray-100 pb-1 text-white">
       <div className="flex h-full">
         {/*animate-scroll*/}
         {[...categorias /*,...categorias*/].map((p, i) => (
