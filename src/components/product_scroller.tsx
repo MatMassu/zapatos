@@ -4,7 +4,7 @@ export default function ProductScroller() {
   );
 
   return (
-    <div className="overflow-hidden relative w-full h-40 bg-gray-100 pb-1 text-white">
+    <div className="overflow-hidden relative w-full h-40 py-0.5 bg-gray-100 text-white">
       <div className="flex h-full">
         {/*animate-scroll*/}
         {[...categorias /*,...categorias*/].map((p, i) => (
