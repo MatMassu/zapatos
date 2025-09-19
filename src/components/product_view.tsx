@@ -1,15 +1,32 @@
 import Amount from "@/components/amount";
 import Image from "next/image";
-import PaymentShippingOptions from "@/components/payment_shipping";
 
 export default function ProductView({
-  name = "Not Found",
-  description = "N/A",
-  price = 0,
+  name,
+  description,
+  price,
+  onClose,
+}: {
+  name?: string;
+  description?: string;
+  price?: number;
+  onClose: () => void;
 }) {
   return (
-    <div className="fixed inset-0 w-screen h-screen bg-black/50 backdrop-blur-md">
-      <div className="fixed m-20 inset-0 rounded-xl bg-white z-50">
+    <div
+      className="fixed inset-0 w-screen h-screen bg-black/50 backdrop-blur-md flex items-center justify-center"
+      onClick={onClose}
+    >
+      <div
+        className="fixed m-20 rounded-xl bg-white"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-6 text-2xl text-gray-500 hover:text-black cursor-pointer"
+        >
+          ✕
+        </button>
         <div className="flex px-[5vw] py-[2vw] text-black">
           <div className="flex basis-1/2 border border-gray-300 rounded-xl justify-center">
             <Image src="/shoes_ph.png" alt="" height="500" width="700" />
@@ -68,7 +85,6 @@ export default function ProductView({
                 </button>
               </div>
             </div>
-            <PaymentShippingOptions />
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ButtonProps = {
   src: string;
   onClick?: (
@@ -11,7 +13,7 @@ export default function Button(props: ButtonProps) {
       className="flex-none font-serif text-slate-700 text-sm opacity-80 border cursor-pointer border-slate-200 bg-white rounded-md pl-2 pr-2 py-2 transition duration-100 ease focus:outline-none focus:border-slate-400 hover:border-gray-500 shadow-sm focus:shadow active:scale-95"
       onClick={props.onClick}
     >
-      <img src={props.src} height="20" width="20" />
+      <Image src={props.src} alt="button" height="20" width="20" />
     </button>
   );
 }

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Cart() {
   return (
-    <div className="fixed flex row size-full mt-[100px] font-serif">
+    <div className="fixed flex size-full mt-[100px] font-serif">
       <div className="w-full h-screen bg-[#00000086] backdrop-blur-md z-10"></div>
       <div className="flex flex-col min-h-screen bg-white basis-1/4 pt-3 text-black">
         <h1 className="text-center text-xl">CARRITO</h1>
